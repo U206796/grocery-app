@@ -1,8 +1,10 @@
 <?php
 
+session_start();
+
 if (isset($_POST['submit'])) {
 
-require "../confign.php";
+require "../config.php";
 
 try {
 
@@ -26,19 +28,17 @@ echo $sql . "<br>" . $error->getMessage();
 if (isset($_POST['submit'])) {
 
 if ($result && $statement->rowCount() > 0) { ?>
-<h2>Results</h2>
+<h2>goodies</h2>
 
 <?php
 foreach($result as $row) {
 ?>
 
 <p>
-ID:
-<?php echo $row["id"]; ?><br> catergory:
-<?php echo $row['catergory']; ?><br> items:
-<?php echo $row['items']; ?><br> deadline:
-<?php echo $row['deadline']; ?><br> shop:
-<?php echo $row['shop']; ?><br>
+        catergory: <?php echo $row['catergory']; ?><br> 
+        items: <?php echo $row['items']; ?><br> 
+        deadline: <?php echo $row['deadline']; ?><br> 
+        shop: <?php echo $row['shop']; ?><br>
 </p>
 <?php
 // this willoutput all the data from the array
@@ -52,3 +52,5 @@ ID:
 <form method="post">
 <input type="submit" name="submit" value="View all">
 </form> 
+
+<?php include "templates/footer.php"; ?>

@@ -1,8 +1,10 @@
 <?php 
 
+session_start();
+
     if (isset($_GET['id'])) {
 
-        require "../confign.php";
+        require "../config.php";
         require "common.php";
 
             if (isset($_POST['submit'])) {
@@ -60,9 +62,6 @@
         include "templates/header.php";
 ?>
 <form method="post">
-
-    <label for="id">ID</label>
-    <input type="text" name="id" id="id" value="<?php echo escape($entry['id']); ?>">
 
     <label for="catergory">catergory</label> 
     <input type="text" name="catergory" id="catergory" value="<?php echo escape($entry['catergory']); ?>">

@@ -1,6 +1,8 @@
 <?php
 
-require "../confign.php";
+session_start();
+
+require "../config.php";
 
 try {
 
@@ -26,12 +28,10 @@ echo $sql . "<br>" . $error->getMessage();
 foreach($result as $row) {
 ?>
 <p>
-ID:
-<?php echo $row["id"]; ?><br> catergory:
-<?php echo $row['catergory']; ?><br> items:
-<?php echo $row['items']; ?><br> deadline:
-<?php echo $row['deadline']; ?><br> shop:
-<?php echo $row['shop']; ?><br>
+        catergory: <?php echo $row['catergory']; ?><br> 
+        items: <?php echo $row['items']; ?><br> 
+        deadline: <?php echo $row['deadline']; ?><br> 
+        shop: <?php echo $row['shop']; ?><br>
 <a href='update-entry.php?id=<?php echo $row['id']; ?>'>Edit</a>
 </p>
 
@@ -47,3 +47,5 @@ ID:
 <form method="post">
 <input type="submit" name="submit" value="View all">
 </form>
+
+<?php include "templates/footer.php"; ?>
