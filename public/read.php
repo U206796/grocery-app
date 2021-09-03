@@ -4,7 +4,7 @@ session_start();
 
 if (isset($_POST['submit'])) {
 
-require "../config.php";
+require "../confign.php";
 
 try {
 

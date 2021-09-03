@@ -2,7 +2,7 @@
 
 session_start();
 
-require "../config.php";
+require "../confign.php";
 
 try {
 

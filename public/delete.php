@@ -2,7 +2,7 @@
 
 session_start();
 
-require "../config.php";
+require "../confign.php";
 require "common.php";
 
 if (isset($_GET["id"])) {

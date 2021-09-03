@@ -4,7 +4,7 @@ session_start();
 
     if (isset($_GET['id'])) {
 
-        require "../config.php";
+        require "../confign.php";
         require "common.php";
 
             if (isset($_POST['submit'])) {
